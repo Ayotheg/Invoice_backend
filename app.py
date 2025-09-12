@@ -8,13 +8,11 @@ from flask_cors import CORS
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app)  # enable CORS after creating the app
 
 @app.route("/", methods=["GET"])
 def home():
     return "✅ Flask backend is running!"
-
-app = Flask(__name__)
-CORS(app) 
 
 @app.route("/api/invoice", methods=["POST"])
 def generate_invoice():
