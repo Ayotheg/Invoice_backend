@@ -2,6 +2,7 @@ from flask import Flask, request, Response
 import requests
 import os
 from dotenv import load_dotenv
+from flask_cors import CORS
 
 # Load environment variables
 load_dotenv()
@@ -11,6 +12,9 @@ app = Flask(__name__)
 @app.route("/", methods=["GET"])
 def home():
     return "✅ Flask backend is running!"
+
+app = Flask(__name__)
+CORS(app) 
 
 @app.route("/api/invoice", methods=["POST"])
 def generate_invoice():
