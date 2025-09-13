@@ -7,6 +7,8 @@ from flask_cors import CORS
 # Load environment variables
 load_dotenv()
 
+INVOICE_GENERATOR_API_KEY = os.getenv("INVOICE_GENERATOR_API_KEY")
+
 app = Flask(__name__)
 CORS(app)  # enable CORS after creating the app
 
